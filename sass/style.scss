@@ -1,0 +1,89 @@
+$colors: (
+  table-border: #ff0000,
+  input-border: #999,
+  result-bg: #fa9860,
+  result-border: #fff,
+  result-font-color: #fff,
+);
+
+@function colors($key) {
+  @return map-get($colors, $key);
+}
+
+#simulation {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  max-width: 1000px;
+  margin: 50px auto;
+
+  #calc {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid colors(table-border);
+
+    dt {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      padding: 40px 20px;
+      font-size: 18px;
+      border-top: 1px solid colors(table-border);
+      border-right: 1px solid colors(table-border);
+    }
+
+    dd {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: calc(100% - 250px);
+      border-top: 1px solid colors(table-border);
+      padding: 40px 20px;
+      font-size: 16px;
+
+      input {
+        width: 200px;
+        border: 3px solid colors(input-border);
+        padding: 15px 20px;
+        border-radius: 10px;
+        text-align: right;
+        font-size: 20px;
+        margin-right: 10px;
+      }
+
+      &.bonus>div {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  #result {
+    background-color: colors(result-bg);
+    padding: 20px;
+
+    h3 {
+      font-size: 20px;
+      color: colors(result-font-color);
+      text-align: center;
+    }
+
+    dl {
+      dt {
+        font-size: 20px;
+        color: colors(result-font-color);
+        border-top: 2px solid colors(result-border);
+        margin-top: 20px;
+        padding-top: 20px;
+      }
+
+      dd {
+        font-size: 18px;
+        color: colors(result-font-color);
+        text-align: right;
+
+        output {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

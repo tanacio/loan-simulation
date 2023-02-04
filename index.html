@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ローンシミュレーション</title>
+  <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div id="simulation">
+    <dl id="calc">
+      <dt>借りる金額</dt>
+      <dd class="money">
+        <input type="number" id="money" value="3000"> 万円
+      </dd>
+      <dt>内ボーナス分の借入金額</dt>
+      <dd class="bonus">
+        <div>ボーナス割合<output id="bonus-ratio"></output>%</div>
+        <input type="number" id="bonus" value="300"> 万円
+      </dd>
+      <dt>返済期間</dt>
+      <dd class="payback">
+        <input type="number" id="payback-period" value="35"> 年
+      </dd>
+      <dt>金利</dt>
+      <dd class="interest-rate">
+        <input type="number" id="interest-rate" value="0.47"> %
+      </dd>
+    </dl>
+    <div id="result">
+      <h3>シミュレーション結果</h3>
+      <dl>
+        <dt>毎月の返済額</dt>
+        <dd id="repayment-monthly">
+          <output></output>円
+        </dd>
+        <dt>ボーナス月の返済額</dt>
+        <dd id="repayment-bonus">
+          <output></output>円
+        </dd>
+        <dt>年間返済額</dt>
+        <dd id="repayment-annual">
+          <output></output>円
+        </dd>
+        <dt>総返済額</dt>
+        <dd id="repayment-amount">
+          <output></output>円
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <script src="./js/loan-simulation.js"></script>
+</body>
+
+</html>
